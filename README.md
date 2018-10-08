@@ -35,3 +35,12 @@ int main() {
     return EXIT_SUCCESS;
 }
 ```
+
+output:
+```
+integer: 5
+also a integer: 5
+double: 5
+also a double: 5
+Press any key to continue . . .
+```
