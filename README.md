@@ -26,7 +26,7 @@ int main() {
     manager.subscribe<double>([](const double& number) {
         cout << "also a double: " << number << endl;
     });
-
+    
     manager.emit(2);
     manager.emit(3.);
     manager.emit(5.f);

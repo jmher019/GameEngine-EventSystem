@@ -22,8 +22,8 @@ int main() {
         cout << "also a double: " << number << endl;
     });
 
-    manager.emit(5);
-    manager.emit(5.);
+    manager.emit(2);
+    manager.emit(3.);
     manager.emit(5.f);
 
     system("pause");
