@@ -1,8 +1,3 @@
-# GameEngine-EventSystem
-This project serves as a library for an event system and for testing it.
-
-## How to use it
-```c++
 #include <iostream>
 #include <EventManager.hpp>
 
@@ -34,13 +29,3 @@ int main() {
     system("pause");
     return EXIT_SUCCESS;
 }
-```
-
-output:
-```
-integer: 5
-also an integer: 5
-double: 5
-also a double: 5
-Press any key to continue . . .
-```
