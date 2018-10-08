@@ -263,6 +263,3 @@ ASALocalRun/
 *.nvuser
  # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
-
-# Exclude the dist folder
-!dist/
