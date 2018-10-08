@@ -27,8 +27,8 @@ int main() {
         cout << "also a double: " << number << endl;
     });
 
-    manager.emit(5);
-    manager.emit(5.);
+    manager.emit(2);
+    manager.emit(3.);
     manager.emit(5.f);
 
     system("pause");
@@ -38,9 +38,9 @@ int main() {
 
 output:
 ```
-integer: 5
-also an integer: 5
-double: 5
-also a double: 5
+integer: 2
+also an integer: 2
+double: 3
+also a double: 3
 Press any key to continue . . .
 ```
