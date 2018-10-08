@@ -11,7 +11,7 @@ int main() {
     });
 
     manager.subscribe<int>([](const int& number) {
-        cout << "also a integer: " << number << endl;
+        cout << "also an integer: " << number << endl;
     });
 
     manager.subscribe<double>([](const double& number) {
