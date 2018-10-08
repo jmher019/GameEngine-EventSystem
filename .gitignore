@@ -10,12 +10,12 @@
  # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
  # Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
+/[Dd]ebug/
+/[Dd]ebugPublic/
+/[Rr]elease/
+/[Rr]eleases/
+/x64/
+/x86/
 bld/
 [Bb]in/
 [Oo]bj/
@@ -263,3 +263,11 @@ ASALocalRun/
 *.nvuser
  # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+
+#Ignore event system directories
+EventSystem/[Dd]ebug/
+EventSystem/[Dd]ebugPublic/
+EventSystem/[Rr]elease/
+EventSystem/[Rr]eleases/
+EventSystem/x64/
+EventSystem/x86/
