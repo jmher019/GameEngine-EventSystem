@@ -16,7 +16,7 @@ int main() {
     });
 
     manager.subscribe<int>([](const int& number) {
-        cout << "also a integer: " << number << endl;
+        cout << "also an integer: " << number << endl;
     });
 
     manager.subscribe<double>([](const double& number) {
@@ -39,7 +39,7 @@ int main() {
 output:
 ```
 integer: 5
-also a integer: 5
+also an integer: 5
 double: 5
 also a double: 5
 Press any key to continue . . .
