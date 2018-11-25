@@ -9,7 +9,7 @@
 
 class EventManager {
 private:
-    static unsigned long idCounter;
+    unsigned long idCounter = 0;
 
 public:
     template <class EventType>

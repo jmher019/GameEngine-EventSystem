@@ -1,6 +1,3 @@
-
-unsigned long EventManager::idCounter = 0;
-
 template<typename EventType>
 unsigned long EventManager::subscribe(callType<EventType> callable) {
     size_t type = Event<EventType>::type();
