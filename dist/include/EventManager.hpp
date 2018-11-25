@@ -8,15 +8,21 @@
 #include <Event.hpp>
 
 class EventManager {
+private:
+    static unsigned long idCounter;
+
 public:
     template <class EventType>
     using callType = std::function<void(const EventType&)>;
 
     template <typename EventType>
-    void subscribe(callType<EventType> callable);
+    unsigned long subscribe(callType<EventType> callable);
 
     template <typename EventType>
     void emit(const EventType& event);
+
+    template <typename EventType>
+    void removeSubscription(const unsigned int& id);
 
     template <typename EventType>
     struct CallbackWrapper {
@@ -28,7 +34,7 @@ public:
         callType<EventType> mCallable;
     };
 
-    std::unordered_map<size_t, std::vector<callType<BaseEvent>>> mSubscribers;
+    std::unordered_map<size_t, std::unordered_map<unsigned long, callType<BaseEvent>>> mSubscribers;
 };
 
 #include <EventManager.inl>
