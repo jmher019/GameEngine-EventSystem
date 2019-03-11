@@ -262,6 +262,7 @@ ASALocalRun/
  # NVidia Nsight GPU debugger configuration file
 *.nvuser
  # MFractors (Xamarin productivity tool) working folder 
+<<<<<<< HEAD
 .mfractor/
 
 #Ignore event system directories
@@ -271,3 +272,6 @@ EventSystem/[Rr]elease/
 EventSystem/[Rr]eleases/
 EventSystem/x64/
 EventSystem/x86/
+=======
+.mfractor/
+>>>>>>> 3323e38747fd7ba52b730e83782485eab9efbdec
