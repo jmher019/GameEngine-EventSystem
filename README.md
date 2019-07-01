@@ -31,6 +31,7 @@ int main() {
         cout << "float: " << number << endl;
     });
 
+	manager.removeSubscription(id1);
     manager.removeSubscription<float>(id5);
 
     manager.emit(2);
@@ -44,7 +45,6 @@ int main() {
 
 output:
 ```
-integer: 2
 also an integer: 2
 double: 3
 also a double: 3
