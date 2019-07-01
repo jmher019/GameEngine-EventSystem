@@ -26,6 +26,7 @@ int main() {
         cout << "float: " << number << endl;
     });
 
+	manager.removeSubscription(id1);
     manager.removeSubscription<float>(id5);
 
     manager.emit(2);

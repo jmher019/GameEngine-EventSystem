@@ -22,32 +22,32 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{9503A271-1408-4AD1-9176-2FF1B71373C6}</ProjectGuid>
     <RootNamespace>EventSystem</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -79,7 +79,10 @@
       <AdditionalIncludeDirectories>$(ProjectDir)..\src\include</AdditionalIncludeDirectories>
     </ClCompile>
     <PostBuildEvent>
-      <Command>copy $(ProjectDir)..\Debug\* $(ProjectDir)..\dist\lib\x86\Debug</Command>
+      <Command>if not exist $(ProjectDir)..\dist\lib\x86\Debug (
+md $(ProjectDir)..\dist\lib\x86\Debug
+)
+copy $(ProjectDir)..\Debug\EventSystem.lib $(ProjectDir)..\dist\lib\x86\Debug</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -91,7 +94,10 @@
       <AdditionalIncludeDirectories>$(ProjectDir)..\src\include</AdditionalIncludeDirectories>
     </ClCompile>
     <PostBuildEvent>
-      <Command>copy $(ProjectDir)..\x64\Debug\* $(ProjectDir)..\dist\lib\x64\Debug</Command>
+      <Command>if not exist $(ProjectDir)..\dist\lib\x64\Debug (
+md $(ProjectDir)..\dist\lib\x64\Debug
+)
+copy $(ProjectDir)..\x64\Debug\EventSystem.lib $(ProjectDir)..\dist\lib\x64\Debug</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -109,7 +115,10 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <PostBuildEvent>
-      <Command>copy $(ProjectDir)..\Release\* $(ProjectDir)..\dist\lib\x86\Release</Command>
+      <Command>if not exist $(ProjectDir)..\dist\lib\x86\Release (
+md $(ProjectDir)..\dist\lib\x86\Release
+)
+copy $(ProjectDir)..\Release\EventSystem.lib $(ProjectDir)..\dist\lib\x86\Release</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -127,16 +136,16 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <PostBuildEvent>
-      <Command>copy $(ProjectDir)..\x64\Release\* $(ProjectDir)..\dist\lib\x64\Release</Command>
+      <Command>if not exist $(ProjectDir)..\dist\lib\x64\Release (
+md $(ProjectDir)..\dist\lib\x64\Release
+)
+copy $(ProjectDir)..\x64\Release\EventSystem.lib $(ProjectDir)..\dist\lib\x64\Release</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\src\include\BaseEvent.hpp" />
     <ClInclude Include="..\src\include\Event.hpp" />
     <ClInclude Include="..\src\include\EventManager.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\src\include\EventManager.inl" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\sources\main.cpp" />
